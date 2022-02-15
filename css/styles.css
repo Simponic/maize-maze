@@ -1,0 +1,24 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: scroll;
+    /* Font from https://www.cssfontstack.com/Lucida-Console */
+    font-family: Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono,monospace;
+    background: radial-gradient(circle, transparent 20%, black 80vw), white;
+}
+
+.canvas-holder canvas {
+    padding: 0;
+    margin: auto;
+    display: block;
+    height: 70vh;
+    width: auto;
+    max-width: 100%;
+}
+
+.button {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
