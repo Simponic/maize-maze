@@ -3,12 +3,53 @@
   <head>
     <title>Amazeing Maize Maze</title>
 		<meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link href="css/styles.css" rel="stylesheet">
   </head>
   <body>
+
+    <div class="modal fade" id="help-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Controls</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <ul>
+              <li>
+                Move with arrow keys, WASD, or IJKL
+              </li>
+              <li>
+                h to toggle a hint
+              </li>
+              <li>
+                p to toggle the shortest path
+              </li>
+              <li>
+                b to toggle breadcrumbs
+              </li>
+            </ul>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <div style="text-align: center">
       <h1>The A-maze-ing Maize Maze!</h1>
       <p>Get to the fire to make popcorn! Current Time: <span style="color: green; font-size:24px" id="elapsed-time"></span> seconds</p>
+      <p>
+        <button type="button" class="button" data-toggle="modal" data-target="#help-modal">
+          Show me the controls!
+        </button>
+      </p>
       <p>
         <a onclick="initialize(5)" class="button">5x5</a>
         <a onclick="initialize(10)" class="button">10x10</a>
