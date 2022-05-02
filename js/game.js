@@ -104,7 +104,7 @@ function render(elapsed) {
   context.stroke();
 
   render_background(n, dx, dy);
-  render_maze(maze, n, dx, dy)
+  render_maze(maze, n, dx, dy);
 
   if (show_player_path) {
     render_path(player_path, dx, dy, 'rgba(255, 0, 0, 255)');
@@ -125,7 +125,7 @@ function render(elapsed) {
     render_time(dom_time);
   }
 
-  render_player(Math.floor(player_pos[0]), Math.floor(player_pos[1]), dx, dy)
+  render_player(Math.floor(player_pos[0]), Math.floor(player_pos[1]), dx, dy);
   render_goal(goal_pos[0], goal_pos[1], dx, dy);
 }
 
@@ -138,7 +138,7 @@ let key_actions = {
   "breadcrumbs": ['b'],
   "shortest_path": ['p'],
   "hint": ['h']
-}
+};
 function handle_input(input) {
   if (input) {
     if (any(key_actions['move_up'].map((x) => input.keys[x])) && !key_actions_down['move_up'] && player_pos[1] > 0) {
@@ -166,22 +166,22 @@ function handle_input(input) {
       }
     }
     if (input.keys['b'] && !key_actions_down['breadcrumbs']) {
-      key_actions_down['breadcrumbs'] = true
+      key_actions_down['breadcrumbs'] = true;
       show_player_path = !show_player_path;
     }
     if (input.keys['p'] && !key_actions_down['shortest_path']) {
-      key_actions_down['shortest_path'] = true
+      key_actions_down['shortest_path'] = true;
       show_shortest_path = !show_shortest_path;
     }
     if (input.keys['h'] && !key_actions_down['hint']) {
-      key_actions_down['hint'] = true
+      key_actions_down['hint'] = true;
       show_next_move = !show_next_move;
     }
     Object.keys(key_actions).map((x) => {
       if (key_actions_down[x] && !any(key_actions[x].map((y) => input.keys[y]))) {
         key_actions_down[x] = false;
       }
-    })
+    });
   }
 }
 
@@ -245,5 +245,5 @@ window.onload = function() {
   canvas = document.getElementById('canvas');
   context = canvas.getContext('2d');
 
-  game_loop(performance.now())
+  game_loop(performance.now());
 }
